@@ -112,10 +112,17 @@ def obtener_viento_gfs():
     for fh in [0, 24, 48, 72]:
         f = descargar_archivo(base_time, fh)
         df = procesar_grib(f, fh, base_time)
-        df_all.append(df)
-    df = pd.concat(df_all)
+        if not df.empty:
+            df_all.append(df)
+
+    if not df_all:
+        st.error("No se pudieron procesar los archivos GFS. Verificá la descarga.")
+        return pd.DataFrame(columns=["Ciudad", "Tiempo UTC", "Velocidad [kt]", "Dirección [°]", "Lat", "Lon"])
+
+    df = pd.concat(df_all, ignore_index=True)
     df["Día"] = df["Tiempo UTC"].dt.date
     return df
+
 
 @st.cache_data(show_spinner=True)
 def obtener_olas_copernicus():
