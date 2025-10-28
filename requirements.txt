@@ -2,6 +2,7 @@ streamlit
 folium
 streamlit-folium
 pandas
+pydap
 xarray
 numpy
 requests
@@ -10,3 +11,4 @@ cartopy
 copernicusmarine
 matplotlib
 openpyxl
+
