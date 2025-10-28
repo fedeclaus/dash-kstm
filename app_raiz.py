@@ -1,6 +1,7 @@
 import streamlit as st
 import datetime
 import os
+import re
 
 # --- Configuración inicial ---
 st.set_page_config(page_title="Panel KSTM - Viento y Olas", layout="wide")
@@ -12,41 +13,40 @@ en los principales puertos del Atlántico Sur.
 """)
 
 # --- Directorio donde están los mapas HTML ---
-RUTA_MAPAS = "./mapas_html"  # o tu subcarpeta del repo
+RUTA_MAPAS = "./mapas_html"  # o la carpeta donde guardás los archivos
 
 # --- Buscar archivos disponibles ---
 if not os.path.exists(RUTA_MAPAS):
     st.error("❌ No se encontró la carpeta con los mapas HTML.")
     st.stop()
 
-archivos = sorted(
-    [f for f in os.listdir(RUTA_MAPAS) if f.endswith(".html")]
-)
+archivos = sorted([f for f in os.listdir(RUTA_MAPAS) if f.endswith(".html")])
 
 if not archivos:
     st.warning("No hay mapas HTML disponibles.")
     st.stop()
 
 # --- Crear menú desplegable con fechas ---
-# Soporta nombres como mapa_combinado_2025-10-29.html
 opciones = []
 for f in archivos:
     try:
-        # Buscar una secuencia con formato YYYY-MM-DD dentro del nombre
-        fecha_str = next(
-            part for part in f.split("_") if "-" in part and len(part) == 10
-        ).replace(".html", "")
-        fecha_dt = datetime.datetime.strptime(fecha_str, "%Y-%m-%d")
-        opciones.append((f, fecha_dt.strftime("%d %b %Y")))
+        # Buscar fecha con regex: YYYY-MM-DD
+        match = re.search(r"\d{4}-\d{2}-\d{2}", f)
+        if match:
+            fecha_str = match.group(0)
+            fecha_dt = datetime.datetime.strptime(fecha_str, "%Y-%m-%d")
+            opciones.append((f, fecha_dt.strftime("%d %b %Y")))
+        else:
+            st.write(f"⚠️ No se encontró fecha válida en {f}")
     except Exception as e:
-        st.write(f"⚠️ No se pudo interpretar la fecha en {f}: {e}")
+        st.write(f"⚠️ Error al interpretar fecha en {f}: {e}")
 
 if not opciones:
     st.error("No se pudo interpretar ninguna fecha de los archivos.")
     st.stop()
 
 # --- Menú de selección ---
-archivos_ordenados = sorted(opciones, key=lambda x: x[0])
+archivos_ordenados = sorted(opciones, key=lambda x: x[1])
 labels = [f"Pronóstico para {x[1]}" for x in archivos_ordenados]
 seleccion = st.selectbox("Seleccioná el día a visualizar:", labels, index=0)
 
