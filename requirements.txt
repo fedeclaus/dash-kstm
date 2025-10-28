@@ -1,0 +1,12 @@
+streamlit
+folium
+streamlit-folium
+pandas
+xarray
+numpy
+requests
+cfgrib
+cartopy
+copernicusmarine
+matplotlib
+openpyxl
