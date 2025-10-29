@@ -3,7 +3,7 @@ import datetime
 import os
 
 # --- Configuración inicial ---
-st.set_page_config(page_title="Panel KSTM - Viento Fluvial", layout="wide")
+st.set_page_config(page_title="Panel KSTM - Viento en área Fluvial", layout="wide")
 
 # --- Estilo para los botones (a la altura del título) ---
 st.markdown("""
@@ -67,7 +67,7 @@ Los mapas muestran el pronóstico correspondiente a las **00Z** de cada día.
 """)
 
 # --- Directorio donde están los mapas HTML ---
-RUTA_MAPAS = "./mapas_html"  # o tu carpeta donde están los mapas fluviales
+RUTA_MAPAS = "./mapas_fluvial"  # o tu carpeta donde están los mapas fluviales
 
 if not os.path.exists(RUTA_MAPAS):
     st.error("❌ No se encontró la carpeta con los mapas HTML.")
