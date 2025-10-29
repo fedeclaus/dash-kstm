@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b8c7c188fa10b46b18d756b7aa7930ff {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+                    <h3 align="center" style="font-size:16px"><b>Pronóstico de Viento GFS (00Z Salida) - 2025-10-30</b></h3>
+                    
+    
+            <div class="folium-map" id="map_b8c7c188fa10b46b18d756b7aa7930ff" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b8c7c188fa10b46b18d756b7aa7930ff = L.map(
+                "map_b8c7c188fa10b46b18d756b7aa7930ff",
+                {
+                    center: [-34.6, -64.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_7594008a3fe53c36242b28f25d071f0d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_7594008a3fe53c36242b28f25d071f0d.addTo(map_b8c7c188fa10b46b18d756b7aa7930ff);
+        
+    
+            var circle_marker_a02eb4e47a930004f31f40194d84b949 = L.circleMarker(
+                [-34.6, -58.6],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b8c7c188fa10b46b18d756b7aa7930ff);
+        
+    
+        var popup_92e0820540f56d4b319c4071dac504c4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8f3d087dacf76448bc9e9395e2decd46 = $(`<div id="html_8f3d087dacf76448bc9e9395e2decd46" style="width: 100.0%; height: 100.0%;"><b>Buenos Aires</b><br>Fecha Hora (UTC): 2025-10-30 00:00<br>Velocidad: 9.2 kt<br>Racha: 18.7 kt<br>Dirección: 94.9 °<br></div>`)[0];
+                popup_92e0820540f56d4b319c4071dac504c4.setContent(html_8f3d087dacf76448bc9e9395e2decd46);
+            
+        
+
+        circle_marker_a02eb4e47a930004f31f40194d84b949.bindPopup(popup_92e0820540f56d4b319c4071dac504c4)
+        ;
+
+        
+    
+    
+            var circle_marker_2211034741499b0e32613576fc95b6c2 = L.circleMarker(
+                [-27.5, -58.8],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b8c7c188fa10b46b18d756b7aa7930ff);
+        
+    
+        var popup_ee45bab4905ac634827b7f448b38d305 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2039e3b0d07f150b9f9e93707f21ec40 = $(`<div id="html_2039e3b0d07f150b9f9e93707f21ec40" style="width: 100.0%; height: 100.0%;"><b>Corrientes</b><br>Fecha Hora (UTC): 2025-10-30 00:00<br>Velocidad: 6.7 kt<br>Racha: 18.1 kt<br>Dirección: 120.7 °<br></div>`)[0];
+                popup_ee45bab4905ac634827b7f448b38d305.setContent(html_2039e3b0d07f150b9f9e93707f21ec40);
+            
+        
+
+        circle_marker_2211034741499b0e32613576fc95b6c2.bindPopup(popup_ee45bab4905ac634827b7f448b38d305)
+        ;
+
+        
+    
+    
+            var circle_marker_da9c631200f49b904600c5e1c8c8b431 = L.circleMarker(
+                [-26.2, -58.2],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b8c7c188fa10b46b18d756b7aa7930ff);
+        
+    
+        var popup_998cbd849db3f14f76736beb4894dffe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ada1eeea33c05f96cc2e20d434e0782f = $(`<div id="html_ada1eeea33c05f96cc2e20d434e0782f" style="width: 100.0%; height: 100.0%;"><b>Formosa</b><br>Fecha Hora (UTC): 2025-10-30 00:00<br>Velocidad: 6.3 kt<br>Racha: 14.7 kt<br>Dirección: 151.8 °<br></div>`)[0];
+                popup_998cbd849db3f14f76736beb4894dffe.setContent(html_ada1eeea33c05f96cc2e20d434e0782f);
+            
+        
+
+        circle_marker_da9c631200f49b904600c5e1c8c8b431.bindPopup(popup_998cbd849db3f14f76736beb4894dffe)
+        ;
+
+        
+    
+    
+            var circle_marker_2b00cd8522e6654904d0c0ae042b675f = L.circleMarker(
+                [-29.16, -59.3],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b8c7c188fa10b46b18d756b7aa7930ff);
+        
+    
+        var popup_f5e42e74c96b842a1f177ddbd3b6f8e5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b7629d4e05f5abe1704b8fc31f742b69 = $(`<div id="html_b7629d4e05f5abe1704b8fc31f742b69" style="width: 100.0%; height: 100.0%;"><b>Goya </b><br>Fecha Hora (UTC): 2025-10-30 00:00<br>Velocidad: 5.2 kt<br>Racha: 15.2 kt<br>Dirección: 84.3 °<br></div>`)[0];
+                popup_f5e42e74c96b842a1f177ddbd3b6f8e5.setContent(html_b7629d4e05f5abe1704b8fc31f742b69);
+            
+        
+
+        circle_marker_2b00cd8522e6654904d0c0ae042b675f.bindPopup(popup_f5e42e74c96b842a1f177ddbd3b6f8e5)
+        ;
+
+        
+    
+    
+            var circle_marker_96fc74171186e8b688f4d6f9abd368f3 = L.circleMarker(
+                [-30.79, -59.59],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b8c7c188fa10b46b18d756b7aa7930ff);
+        
+    
+        var popup_02a9b8a666a67f306060d2c9768a6a85 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9637e11f8d4dfd7839821f25830d2c61 = $(`<div id="html_9637e11f8d4dfd7839821f25830d2c61" style="width: 100.0%; height: 100.0%;"><b>La Paz </b><br>Fecha Hora (UTC): 2025-10-30 00:00<br>Velocidad: 10.4 kt<br>Racha: 20.5 kt<br>Dirección: 90.4 °<br></div>`)[0];
+                popup_02a9b8a666a67f306060d2c9768a6a85.setContent(html_9637e11f8d4dfd7839821f25830d2c61);
+            
+        
+
+        circle_marker_96fc74171186e8b688f4d6f9abd368f3.bindPopup(popup_02a9b8a666a67f306060d2c9768a6a85)
+        ;
+
+        
+    
+    
+            var circle_marker_8d3b45129548a677d17f8ad5b73175c1 = L.circleMarker(
+                [-34.8, -57.8],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b8c7c188fa10b46b18d756b7aa7930ff);
+        
+    
+        var popup_9077492ea891e24457b02576a2071626 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ce47ac5e150535de2b1646552af1fce2 = $(`<div id="html_ce47ac5e150535de2b1646552af1fce2" style="width: 100.0%; height: 100.0%;"><b>La Plata</b><br>Fecha Hora (UTC): 2025-10-30 00:00<br>Velocidad: 17.2 kt<br>Racha: 18.4 kt<br>Dirección: 90.6 °<br></div>`)[0];
+                popup_9077492ea891e24457b02576a2071626.setContent(html_ce47ac5e150535de2b1646552af1fce2);
+            
+        
+
+        circle_marker_8d3b45129548a677d17f8ad5b73175c1.bindPopup(popup_9077492ea891e24457b02576a2071626)
+        ;
+
+        
+    
+    
+            var circle_marker_1b0a7458feabd54afd0b04dc0ac17ba2 = L.circleMarker(
+                [-27.36, -55.9],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b8c7c188fa10b46b18d756b7aa7930ff);
+        
+    
+        var popup_f90eb5c5b7ac41f272b53176b8bfd395 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_65564af291d9f82fbcba6dc51ce24bb3 = $(`<div id="html_65564af291d9f82fbcba6dc51ce24bb3" style="width: 100.0%; height: 100.0%;"><b>Posadas</b><br>Fecha Hora (UTC): 2025-10-30 00:00<br>Velocidad: 4.9 kt<br>Racha: 15.1 kt<br>Dirección: 160.7 °<br></div>`)[0];
+                popup_f90eb5c5b7ac41f272b53176b8bfd395.setContent(html_65564af291d9f82fbcba6dc51ce24bb3);
+            
+        
+
+        circle_marker_1b0a7458feabd54afd0b04dc0ac17ba2.bindPopup(popup_f90eb5c5b7ac41f272b53176b8bfd395)
+        ;
+
+        
+    
+    
+            var circle_marker_84fc91d95c1660e9085edaef680a51ce = L.circleMarker(
+                [-35.02, -56.25],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b8c7c188fa10b46b18d756b7aa7930ff);
+        
+    
+        var popup_9fac8e7942884d7d680a80dc92483746 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_82472befbdfedf84a2c6caa92a738bbf = $(`<div id="html_82472befbdfedf84a2c6caa92a738bbf" style="width: 100.0%; height: 100.0%;"><b>Recalada</b><br>Fecha Hora (UTC): 2025-10-30 00:00<br>Velocidad: 14.7 kt<br>Racha: 14.4 kt<br>Dirección: 99.6 °<br></div>`)[0];
+                popup_9fac8e7942884d7d680a80dc92483746.setContent(html_82472befbdfedf84a2c6caa92a738bbf);
+            
+        
+
+        circle_marker_84fc91d95c1660e9085edaef680a51ce.bindPopup(popup_9fac8e7942884d7d680a80dc92483746)
+        ;
+
+        
+    
+    
+            var circle_marker_f8f337ac2baf2e119195cfe49bf438b1 = L.circleMarker(
+                [-32.9, -60.37],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b8c7c188fa10b46b18d756b7aa7930ff);
+        
+    
+        var popup_3ee04da4c10c04e2e5cad9c53c499758 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a1c21d6613c9928ca9d62b8b9e6f4efc = $(`<div id="html_a1c21d6613c9928ca9d62b8b9e6f4efc" style="width: 100.0%; height: 100.0%;"><b>Rosario</b><br>Fecha Hora (UTC): 2025-10-30 00:00<br>Velocidad: 3.5 kt<br>Racha: 9.4 kt<br>Dirección: 105.5 °<br></div>`)[0];
+                popup_3ee04da4c10c04e2e5cad9c53c499758.setContent(html_a1c21d6613c9928ca9d62b8b9e6f4efc);
+            
+        
+
+        circle_marker_f8f337ac2baf2e119195cfe49bf438b1.bindPopup(popup_3ee04da4c10c04e2e5cad9c53c499758)
+        ;
+
+        
+    
+    
+            var circle_marker_a57eb303e184e1d391ed30435856ec93 = L.circleMarker(
+                [-32.7, -60.6],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b8c7c188fa10b46b18d756b7aa7930ff);
+        
+    
+        var popup_73ad385af8e9c3f661dd17f78e68b9d1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a4ef6f42ddfbdaee305556fafd4c3e28 = $(`<div id="html_a4ef6f42ddfbdaee305556fafd4c3e28" style="width: 100.0%; height: 100.0%;"><b>San Lorenzo</b><br>Fecha Hora (UTC): 2025-10-30 00:00<br>Velocidad: 5.4 kt<br>Racha: 16.1 kt<br>Dirección: 96.5 °<br></div>`)[0];
+                popup_73ad385af8e9c3f661dd17f78e68b9d1.setContent(html_a4ef6f42ddfbdaee305556fafd4c3e28);
+            
+        
+
+        circle_marker_a57eb303e184e1d391ed30435856ec93.bindPopup(popup_73ad385af8e9c3f661dd17f78e68b9d1)
+        ;
+
+        
+    
+    
+            var circle_marker_3aa6630f315c7fbbf19cf953cd3ac5d8 = L.circleMarker(
+                [-33.3, -60.1],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b8c7c188fa10b46b18d756b7aa7930ff);
+        
+    
+        var popup_64744a19b96eba6df4151edabb4a2651 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a13cf44fe577fbab01e6a9c1d43d8910 = $(`<div id="html_a13cf44fe577fbab01e6a9c1d43d8910" style="width: 100.0%; height: 100.0%;"><b>San Nicolás</b><br>Fecha Hora (UTC): 2025-10-30 00:00<br>Velocidad: 3.6 kt<br>Racha: 4.6 kt<br>Dirección: 108.1 °<br></div>`)[0];
+                popup_64744a19b96eba6df4151edabb4a2651.setContent(html_a13cf44fe577fbab01e6a9c1d43d8910);
+            
+        
+
+        circle_marker_3aa6630f315c7fbbf19cf953cd3ac5d8.bindPopup(popup_64744a19b96eba6df4151edabb4a2651)
+        ;
+
+        
+    
+    
+            var circle_marker_24730e1ed77bd18c9a94e0af93179729 = L.circleMarker(
+                [-33.6, -59.6],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b8c7c188fa10b46b18d756b7aa7930ff);
+        
+    
+        var popup_c8a8544a5c6539261c71d3e1ddc59f88 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5d9c690ce55014548a12b15e50869b48 = $(`<div id="html_5d9c690ce55014548a12b15e50869b48" style="width: 100.0%; height: 100.0%;"><b>San Pedro</b><br>Fecha Hora (UTC): 2025-10-30 00:00<br>Velocidad: 4.6 kt<br>Racha: 15.1 kt<br>Dirección: 126.4 °<br></div>`)[0];
+                popup_c8a8544a5c6539261c71d3e1ddc59f88.setContent(html_5d9c690ce55014548a12b15e50869b48);
+            
+        
+
+        circle_marker_24730e1ed77bd18c9a94e0af93179729.bindPopup(popup_c8a8544a5c6539261c71d3e1ddc59f88)
+        ;
+
+        
+    
+    
+            var circle_marker_ddb9691a5b971f6fea405daec842b142 = L.circleMarker(
+                [-31.69, -60.57],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b8c7c188fa10b46b18d756b7aa7930ff);
+        
+    
+        var popup_be230912b8e5cefc37055fb99147d878 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3481de1d278da07aa656b0416dd1869 = $(`<div id="html_e3481de1d278da07aa656b0416dd1869" style="width: 100.0%; height: 100.0%;"><b>Santa Fe</b><br>Fecha Hora (UTC): 2025-10-30 00:00<br>Velocidad: 6.1 kt<br>Racha: 11.0 kt<br>Dirección: 58.6 °<br></div>`)[0];
+                popup_be230912b8e5cefc37055fb99147d878.setContent(html_e3481de1d278da07aa656b0416dd1869);
+            
+        
+
+        circle_marker_ddb9691a5b971f6fea405daec842b142.bindPopup(popup_be230912b8e5cefc37055fb99147d878)
+        ;
+
+        
+    
+    
+            var circle_marker_e120c1cd3d9b7cbea6d692bfde8dbc14 = L.circleMarker(
+                [-34.1, -59.0],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_b8c7c188fa10b46b18d756b7aa7930ff);
+        
+    
+        var popup_eccc6f21bf234f891c14d22afd01f5e1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8d2c4f86c73458eff0fe6d4230b7696f = $(`<div id="html_8d2c4f86c73458eff0fe6d4230b7696f" style="width: 100.0%; height: 100.0%;"><b>Zárate</b><br>Fecha Hora (UTC): 2025-10-30 00:00<br>Velocidad: 5.6 kt<br>Racha: 18.6 kt<br>Dirección: 114.9 °<br></div>`)[0];
+                popup_eccc6f21bf234f891c14d22afd01f5e1.setContent(html_8d2c4f86c73458eff0fe6d4230b7696f);
+            
+        
+
+        circle_marker_e120c1cd3d9b7cbea6d692bfde8dbc14.bindPopup(popup_eccc6f21bf234f891c14d22afd01f5e1)
+        ;
+
+        
+    
+</script>
+</html>
