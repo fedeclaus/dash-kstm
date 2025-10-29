@@ -5,18 +5,27 @@ import os
 # --- Configuración inicial ---
 st.set_page_config(page_title="Panel KSTM - Viento y Olas", layout="wide")
 
-# --- Botones superiores alineados ---
+# --- Estilo para los botones (a la altura del título) ---
 st.markdown("""
     <style>
-    .botones-derecha {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1000;
+    .fila-titulo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+    }
+    .titulo {
+        font-size: 2rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .botones {
         display: flex;
         gap: 10px;
     }
-    .botones-derecha a {
+    .botones a {
         background-color: #009688;
         color: white !important;
         text-decoration: none;
@@ -26,27 +35,32 @@ st.markdown("""
         box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
         font-family: 'sans-serif';
     }
-    .botones-derecha a:hover {
+    .botones a:hover {
         background-color: #00796b;
         color: white !important;
     }
-    .botones-derecha a.satelite {
+    .botones a.satelite {
         background-color: #0066cc;
     }
-    .botones-derecha a.satelite:hover {
+    .botones a.satelite:hover {
         background-color: #004c99;
     }
     </style>
-
-    <div class="botones-derecha">
-        <a href="https://zoom.earth/maps/satellite/#view=-35.5,-61.3,4z" 
-           class="satelite" target="_blank">SATÉLITE</a>
-        <a href="https://kstm-fluvial.streamlit.app/" target="_blank">PRONÓSTICO FLUVIAL</a>
-    </div>
 """, unsafe_allow_html=True)
 
-# --- Título principal ---
-st.title("🌊 Panel de Pronóstico Marítimo (KSTM)")
+# --- Encabezado con título y botones ---
+st.markdown("""
+<div class="fila-titulo">
+  <div class="titulo">🌊 Panel de Pronóstico Marítimo (KSTM)</div>
+  <div class="botones">
+    <a href="https://zoom.earth/maps/satellite/#view=-35.5,-61.3,4z" 
+       class="satelite" target="_blank">SATÉLITE</a>
+    <a href="https://kstm-fluvial.streamlit.app/" target="_blank">PRONÓSTICO FLUVIAL</a>
+  </div>
+</div>
+""", unsafe_allow_html=True)
+
+# --- Descripción ---
 st.markdown("""
 Visualización combinada de **altura significativa de ola** (Copernicus) y **viento máximo pronosticado** (GFS)
 en los principales puertos del Atlántico Sur.
@@ -59,9 +73,7 @@ if not os.path.exists(RUTA_MAPAS):
     st.error("❌ No se encontró la carpeta con los mapas HTML.")
     st.stop()
 
-archivos = sorted(
-    [f for f in os.listdir(RUTA_MAPAS) if f.endswith(".html")]
-)
+archivos = sorted([f for f in os.listdir(RUTA_MAPAS) if f.endswith(".html")])
 
 if not archivos:
     st.warning("No hay mapas HTML disponibles.")
@@ -81,7 +93,6 @@ if not opciones:
     st.error("No se pudo interpretar ninguna fecha de los archivos.")
     st.stop()
 
-# --- Menú de selección ---
 archivos_ordenados = sorted(opciones, key=lambda x: x[0])
 labels = [f"Pronóstico para {x[1]}" for x in archivos_ordenados]
 seleccion = st.selectbox("Seleccioná el día a visualizar:", labels, index=0)
@@ -91,7 +102,6 @@ ruta_html = os.path.join(RUTA_MAPAS, archivo_seleccionado)
 
 st.subheader(f"🗓️ {seleccion}")
 
-# --- Mostrar HTML embebido ---
 with open(ruta_html, "r", encoding="utf-8") as f:
     html = f.read()
 
